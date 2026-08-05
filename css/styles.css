@@ -227,7 +227,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: marquee 32s linear infinite;
+  animation: marquee 55s linear infinite;
 }
 .marquee-track:hover { animation-play-state: paused; }
 
@@ -258,11 +258,11 @@ img { display: block; max-width: 100%; }
 }
 
 /* Poster images — local assets first, gradient fallback */
-.poster-1 { background-image: url('../assets/drama1.svg'), linear-gradient(135deg, #6d28d9 0%, #db2777 100%); }
-.poster-2 { background-image: url('../assets/drama2.svg'), linear-gradient(135deg, #1e3a5f 0%, #7c3aed 100%); }
-.poster-3 { background-image: url('../assets/drama3.svg'), linear-gradient(135deg, #9333ea 0%, #ec4899 100%); }
-.poster-4 { background-image: linear-gradient(135deg, #be185d 0%, #7c3aed 100%); }
-.poster-5 { background-image: linear-gradient(135deg, #4338ca 0%, #ec4899 100%); }
+.poster-1 { background-image: url('../assets/drama1.jpg'); }
+.poster-2 { background-image: url('../assets/drama2.jpg'); }
+.poster-3 { background-image: url('../assets/drama3.jpg'); }
+.poster-4 { background-image: url('../assets/drama4.jpg'); }
+.poster-5 { background-image: url('../assets/drama5.jpg'); }
 
 @keyframes marquee {
   to { translate: calc(-50% - 10px) 0; }
@@ -468,11 +468,29 @@ img { display: block; max-width: 100%; }
    RESPONSIVE
    ================================================================ */
 @media (max-width: 640px) {
-  .hero-title  { font-size: 2.2rem; }
+  .hero { min-height: 70vh; padding: 120px 16px 60px; }
+  .hero-title  { font-size: 2rem; }
+  .hero-sub { font-size: .9375rem; margin-bottom: 28px; }
   .nav-link    { display: none; }
   .features-grid { grid-template-columns: 1fr; }
-  .poster-card { width: 150px; }
-  .poster      { aspect-ratio: 2 / 3; }
+  .features { padding: 48px 0; }
+  .section-heading { font-size: 1.4rem; margin-bottom: 32px; }
+
+  /* 모바일에서 마퀴 더 느리게 */
+  .marquee-track { animation-duration: 70s; gap: 14px; }
+  .poster-card { width: 140px; }
+  .poster-title { font-size: .75rem; }
+
+  /* 터치 친화적 버튼 */
+  .btn { min-height: 44px; }
+  .btn-lg { padding: 14px 28px; font-size: 1rem; }
+
+  /* 랜딩 페이지 */
+  .landing-hero { padding: 48px 16px 32px; }
+  .landing-hero .hero-title { font-size: 1.75rem; }
+  .dl-card { padding: 20px; margin-top: 20px; }
+  .bottom-cta { padding: 14px 16px; }
+  .step-card { padding: 16px; }
 }
 
 /* Reduced motion */
