@@ -477,7 +477,7 @@ img { display: block; max-width: 100%; }
   .section-heading { font-size: 1.4rem; margin-bottom: 32px; }
 
   /* 모바일에서 마퀴 더 느리게 */
-  .marquee-track { animation-duration: 70s; gap: 14px; }
+  .marquee-track { animation-duration: 120s; gap: 14px; }
   .poster-card { width: 140px; }
   .poster-title { font-size: .75rem; }
 
